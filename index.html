@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinity Wiring Solutions - Home Buyer Information Form</title>
+    <meta name="description" content="Submit your home buyer information to Trinity Wiring Solutions for security and integration services.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: white;
+            padding: 40px 30px 30px;
+            text-align: center;
+            border-bottom: 3px solid #f1f3f4;
+        }
+
+        .company-logo {
+            max-width: 400px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .company-tagline {
+            font-size: 1.1em;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .form-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-size: 0.95em;
+            color: #7f8c8d;
+            margin-top: 15px;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .form-container {
+            padding: 40px;
+        }
+
+        .form-intro {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+        }
+
+        .form-intro h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .form-intro p {
+            color: #5a6c7d;
+            font-size: 0.9em;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.95em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e6ed;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        .form-section-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+            grid-column: 1 / -1;
+        }
+
+        .submit-section {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 2px solid #f1f3f4;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: inherit;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(52, 152, 219, 0.4);
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 25px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+
+        .security-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .security-icon {
+            color: #27ae60;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .container {
+                margin: 0;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 25px 20px;
+            }
+            
+            .company-logo {
+                max-width: 300px;
+            }
+
+            .form-title {
+                font-size: 1.2em;
+            }
+            
+            .form-container {
+                padding: 25px;
+            }
+
+            .submit-btn {
+                padding: 16px 40px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .company-logo {
+                max-width: 250px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 12px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+
+        /* Loading state */
+        .form-submitting .submit-btn {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        .form-submitting .submit-btn:hover {
+            transform: none;
+        }
+
+        /* Success message styling */
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==" alt="Trinity Wiring Solutions Logo" class="company-logo" id="company-logo">
+            <p class="company-tagline">Security & Integration Solutions Since 2001</p>
+            <h1 class="form-title">Home Buyer Information Form</h1>
+            <div class="contact-info">
+                📧 <a href="mailto:contactus@trinitywiringsolutions.com">contactus@trinitywiringsolutions.com</a> | 
+                📞 <a href="tel:703-257-9403">(703) 257-9403</a> ext. 341
+            </div>
+        </div>
+
+        <div class="form-container">
+            <div class="form-intro">
+                <h3>🏠 Get Started with Trinity Wiring Solutions</h3>
+                <p>Complete this form to receive personalized information and schedule your consultation. We work with your homebuilder to provide seamless security and automation solutions.</p>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                ✅ Thank you! Your information is being processed. You'll receive a confirmation email shortly.
+            </div>
+
+            <form action="https://webto.salesforce.com/servlet/servlet.WebToLead" method="POST" id="homeBuyerForm">
+                <!-- Salesforce Web-to-Lead Configuration -->
+                <input type="hidden" name="oid" value="00DgK000004vZJh">
+                <input type="hidden" name="retURL" value="https://trinitywss.my.site.com/appointmentschedule/s/">
+                <input type="hidden" name="lead_source" value="Home Buyer Form - Website">
+
+                <div class="form-grid">
+                    <h2 class="form-section-title">👤 Contact Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="first_name">First Name <span class="required">*</span></label>
+                        <input type="text" id="first_name" name="first_name" required maxlength="40">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="last_name">Last Name <span class="required">*</span></label>
+                        <input type="text" id="last_name" name="last_name" required maxlength="80">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="street">Home Address <span class="required">*</span></label>
+                        <input type="text" id="street" name="street" required placeholder="123 Main Street">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" maxlength="40" placeholder="Your City">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="zip">Zip Code</label>
+                        <input type="text" id="zip" name="zip" maxlength="20" placeholder="12345" pattern="[0-9]{5}(-[0-9]{4})?" title="Please enter a valid zip code">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required maxlength="80" placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Home Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mobile">Work Phone</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="(555) 123-4567">
+                    </div>
+
+                    <h2 class="form-section-title">🏗️ Project Details</h2>
+                    
+                    <div class="form-group">
+                        <label for="00NgK000013cpxK">Homebuilder</label>
+                        <select id="00NgK000013cpxK" name="00NgK000013cpxK" title="Homebuilder">
+                            <option value="">-- Select Homebuilder --</option>
+                            <option value="Classic Cottages">Classic Cottages</option>
+                            <option value="NV Homes">NV Homes</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="00NgK000013citr">Community / Lot #</label>
+                        <input type="text" id="00NgK000013citr" name="00NgK000013citr" maxlength="150" placeholder="Community Name or Lot Number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="00NgK000013d2u9">Floor Plan</label>
+                        <input type="text" id="00NgK000013d2u9" name="00NgK000013d2u9" maxlength="250" placeholder="Floor Plan Name or Model">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="00NgK000013d3qD">Contract Date</label>
+                        <input type="date" id="00NgK000013d3qD" name="00NgK000013d3qD">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="00NgK000013cbty">Salesperson</label>
+                        <input type="text" id="00NgK000013cbty" name="00NgK000013cbty" maxlength="150" placeholder="Your Sales Representative">
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="description">Additional Comments</label>
+                        <textarea id="description" name="description" placeholder="Tell us about your security and automation needs, timeline, or any special requirements..."></textarea>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <input type="submit" value="Submit Information" class="submit-btn" id="submitBtn">
+                    <div class="security-note">
+                        <span class="security-icon">🔒</span>
+                        <span>Your information is secure and will only be used for project coordination</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p><strong>Trinity Wiring Solutions LLC</strong> - Your trusted partner for home security and automation since 2001</p>
+            <p>Serving residential and commercial clients with 24/7 monitored systems, access control, video surveillance, and smart home solutions.</p>
+        </div>
+    </div>
+
+    <script>
+        // Phone number formatting
+        function formatPhoneNumber(input) {
+            const phoneNumber = input.value.replace(/\D/g, '');
+            if (phoneNumber.length === 10) {
+                input.value = `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6)}`;
+            }
+        }
+
+        // Add phone formatting
+        const phoneFields = ['phone', 'mobile'];
+        phoneFields.forEach(fieldId => {
+            const field = document.getElementById(fieldId);
+            if (field) {
+                field.addEventListener('blur', function() {
+                    formatPhoneNumber(this);
+                });
+            }
+        });
+
+        // Form submission handling
+        document.getElementById('homeBuyerForm').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submitBtn');
+            const form = document.getElementById('homeBuyerForm');
+            
+            // Add submitting class for visual feedback
+            form.classList.add('form-submitting');
+            submitBtn.value = 'Submitting...';
+            submitBtn.disabled = true;
+            
+            // Show success message
+            const successMsg = document.getElementById('successMessage');
+            successMsg.style.display = 'block';
+            successMsg.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Enhanced form validation
+        document.querySelectorAll('input[required]').forEach(input => {
+            input.addEventListener('invalid', function(e) {
+                e.target.setCustomValidity('');
+                if (!e.target.validity.valid) {
+                    if (e.target.type === 'email') {
+                        e.target.setCustomValidity('Please enter a valid email address');
+                    } else {
+                        e.target.setCustomValidity('This field is required');
+                    }
+                }
+            });
+            
+            input.addEventListener('input', function(e) {
+                e.target.setCustomValidity('');
+            });
+        });
+
+        // Auto-resize textarea
+        const textarea = document.getElementById('description');
+        if (textarea) {
+            textarea.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+        }
+
+        // Load the actual logo image from GitHub
+        document.getElementById('company-logo').src = 'https://raw.githubusercontent.com/steelclutchsean/trinity-form/main/trinity-logo.png';
+    </script>
+</body>
+</html>
