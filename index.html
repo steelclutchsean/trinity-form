@@ -387,86 +387,115 @@
                 <input type="hidden" name="retURL" value="https://steelclutchsean.github.io/trinity-form/thank-you.html">
                 <input type="hidden" name="lead_source" value="Home Buyer Form - Website">
 
-                <div class="form-grid">
-                    <h2 class="form-section-title">👤 Contact Information</h2>
-                    
-                    <div class="form-group">
-                        <label for="first_name">First Name <span class="required">*</span></label>
-                        <input type="text" id="first_name" name="first_name" required maxlength="40">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="last_name">Last Name <span class="required">*</span></label>
-                        <input type="text" id="last_name" name="last_name" required maxlength="80">
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="street">Home Address <span class="required">*</span></label>
-                        <input type="text" id="street" name="street" required placeholder="123 Main Street">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="city">City</label>
-                        <input type="text" id="city" name="city" maxlength="40" placeholder="Your City">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="zip">Zip Code</label>
-                        <input type="text" id="zip" name="zip" maxlength="20" placeholder="12345" pattern="[0-9]{5}(-[0-9]{4})?" title="Please enter a valid zip code">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required maxlength="80" placeholder="your.email@example.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Home Phone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="mobile">Work Phone</label>
-                        <input type="tel" id="mobile" name="mobile" placeholder="(555) 123-4567">
-                    </div>
+                    <div class="form-grid">
+                        <h2 class="form-section-title">👤 Primary Buyer Information</h2>
+                        
+                        <div class="form-group">
+                            <label for="first_name">First Name <span class="required">*</span></label>
+                            <input type="text" id="first_name" name="first_name" required maxlength="40">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="last_name">Last Name <span class="required">*</span></label>
+                            <input type="text" id="last_name" name="last_name" required maxlength="80">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required maxlength="80" placeholder="your.email@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
 
-                    <h2 class="form-section-title">🏗️ Project Details</h2>
-                    
-                    <div class="form-group">
-                        <label for="00NgK000013cpxK">Homebuilder <span class="required">*</span></label>
-                        <select id="00NgK000013cpxK" name="00NgK000013cpxK" title="Homebuilder" required>
-                            <option value="">-- Select Homebuilder --</option>
-                            <option value="Classic Cottages">Classic Cottages</option>
-                            <option value="NV Homes">NV Homes</option>
-                            <option value="Other">Other</option>
-                        </select>
+                        <h2 class="form-section-title">👥 Co-Buyer Information (Optional)</h2>
+                        
+                        <div class="form-group">
+                            <label for="co_buyer_first_name">Co-Buyer First Name</label>
+                            <input type="text" id="co_buyer_first_name" name="00NgK000013XXXX1" maxlength="40" placeholder="Co-buyer's first name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="co_buyer_last_name">Co-Buyer Last Name</label>
+                            <input type="text" id="co_buyer_last_name" name="00NgK000013XXXX2" maxlength="80" placeholder="Co-buyer's last name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="co_buyer_email">Co-Buyer Email</label>
+                            <input type="email" id="co_buyer_email" name="00NgK000013XXXX3" maxlength="80" placeholder="cobuyer@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="co_buyer_phone">Co-Buyer Phone</label>
+                            <input type="tel" id="co_buyer_phone" name="00NgK000013XXXX4" placeholder="(555) 123-4567">
+                        </div>
+
+                        <h2 class="form-section-title">🏠 Address Information</h2>
+                        
+                        <div class="form-group full-width">
+                            <label for="street">New Home Address (if applicable)</label>
+                            <input type="text" id="street" name="street" placeholder="123 Main Street (leave blank if not yet assigned)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" maxlength="40" placeholder="Your City">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="zip">Zip Code</label>
+                            <input type="text" id="zip" name="zip" maxlength="20" placeholder="12345" pattern="[0-9]{5}(-[0-9]{4})?" title="Please enter a valid zip code">
+                        </div>
+
+                        <h2 class="form-section-title">🏗️ Project Details</h2>
+                        
+                        <div class="form-group">
+                            <label for="00NgK000013cpxK">Homebuilder <span class="required">*</span></label>
+                            <select id="00NgK000013cpxK" name="00NgK000013cpxK" title="Homebuilder" required>
+                                <option value="">-- Select Homebuilder --</option>
+                                <option value="Classic Cottages">Classic Cottages</option>
+                                <option value="NV Homes">NV Homes</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="community">Community</label>
+                            <input type="text" id="community" name="00NgK000013XXXX5" maxlength="150" placeholder="Community Name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="community_designator">Community Designator</label>
+                            <input type="text" id="community_designator" name="00NgK000013XXXX6" maxlength="100" placeholder="e.g., Phase 1, Section A, etc.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lot_number">Lot #</label>
+                            <input type="text" id="lot_number" name="00NgK000013XXXX7" maxlength="50" placeholder="Lot Number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="00NgK000013d2u9">House Floorplan</label>
+                            <input type="text" id="00NgK000013d2u9" name="00NgK000013d2u9" maxlength="250" placeholder="Floor Plan Name or Model">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="00NgK000013d3qD">Contract Date</label>
+                            <input type="date" id="00NgK000013d3qD" name="00NgK000013d3qD">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="00NgK000013cbty">Salesperson</label>
+                            <input type="text" id="00NgK000013cbty" name="00NgK000013cbty" maxlength="150" placeholder="Your Sales Representative">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="description">Additional Comments</label>
+                            <textarea id="description" name="description" placeholder="Tell us about your security and automation needs, timeline, or any special requirements..."></textarea>
+                        </div>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="00NgK000013citr">Community / Lot #</label>
-                        <input type="text" id="00NgK000013citr" name="00NgK000013citr" maxlength="150" placeholder="Community Name or Lot Number">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="00NgK000013d2u9">Floor Plan</label>
-                        <input type="text" id="00NgK000013d2u9" name="00NgK000013d2u9" maxlength="250" placeholder="Floor Plan Name or Model">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="00NgK000013d3qD">Contract Date</label>
-                        <input type="date" id="00NgK000013d3qD" name="00NgK000013d3qD">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="00NgK000013cbty">Salesperson</label>
-                        <input type="text" id="00NgK000013cbty" name="00NgK000013cbty" maxlength="150" placeholder="Your Sales Representative">
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="description">Additional Comments</label>
-                        <textarea id="description" name="description" placeholder="Tell us about your security and automation needs, timeline, or any special requirements..."></textarea>
-                    </div>
-                </div>
 
                 <div class="submit-section">
                     <input type="submit" value="Submit Information" class="submit-btn" id="submitBtn">
@@ -494,7 +523,7 @@
         }
 
         // Add phone formatting
-        const phoneFields = ['phone', 'mobile'];
+        const phoneFields = ['phone', 'co_buyer_phone'];
         phoneFields.forEach(fieldId => {
             const field = document.getElementById(fieldId);
             if (field) {
